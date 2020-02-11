@@ -96,16 +96,16 @@ const student10 = {
 const studentsArr = [ student1, student2, student3, student4, student5, student6, student7, student8, student9, student10 ];
 
 // 3. Проверяем оценки, пол и возраст. Добавляем isReadyForArmy, удаляем grades, course
-function averageFun( a ) {
+function averageFun( student ) {
   let sum = 0;
-  for ( let i = 0; i < a.grades.length; i++ ) {
-    sum += a.grades[ i ];
+  for ( let i = 0; i < student.grades.length; i++ ) {
+    sum += student.grades[ i ];
   }
-  return sum / a.grades.length;
+  return sum / student.grades.length;
 }
 
 for ( let i = 0; i < studentsArr.length; i++ ) {
-  if ( averageFun( studentsArr[ i ] ) < 3 && studentsArr[ i ].gender === "male" && studentsArr[ i ].age >= 18 ) {
+  if ( averageFun( studentsArr[ i ] ) < 3 && studentsArr[ i ].gender === "male" && studentsArr[ i ].age >= 18 && studentsArr[ i ].age <= 27 ) {
     studentsArr[ i ].isReadyForArmy = true;
     delete studentsArr[ i ].grades;
     delete studentsArr[ i ].course;
